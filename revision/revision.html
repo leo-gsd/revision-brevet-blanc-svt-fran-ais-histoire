@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Révisions</title>
+  <link rel="stylesheet" href="revison.css">
+</head>
+<body>
+
+  <header>
+    <h1>📚 Mes Révisions</h1>
+  </header>
+
+  <main>
+    <section class="input-section">
+      <h2>Ajouter une fiche</h2>
+      <input type="text" id="title" placeholder="Titre">
+      <textarea id="content" placeholder="Texte..."></textarea>
+      <input type="text" id="link" placeholder="Lien (optionnel)">
+      <button onclick="addCard()">Ajouter</button>
+    </section>
+
+    <section id="cards" class="cards"></section>
+  </main>
+
+  <script src="revision.js"></script>
+</body>
+</html>
