@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2e7d32">
+  <title>Révisions</title>
+  <link rel="stylesheet" href="revision.css">
+</head>
+<body>
+
+  <header>
+    <div class="layout-inner">
+      <h1>📚 Mes révisions</h1>
+    </div>
+  </header>
+
+  <main class="layout-inner">
+    <section class="input-section">
+      <h2>Ajouter une fiche</h2>
+      <input type="text" id="title" placeholder="Titre" autocomplete="off">
+      <textarea id="content" placeholder="Texte…" rows="5"></textarea>
+      <label class="field-label" for="file-select">Enregistrer dans</label>
+      <select id="file-select">
+        <option value="1">Histoire-géographie</option>
+        <option value="2">Français</option>
+        <option value="3">SVT</option>
+      </select>
+      <input type="text" id="link" placeholder="Lien (optionnel)" inputmode="url" autocomplete="off">
+      <div class="form-actions">
+        <button type="button" id="submit-btn" onclick="saveCard()">Ajouter</button>
+        <button type="button" id="cancel-edit-btn" class="btn-secondary" onclick="cancelEdit()" hidden>Annuler</button>
+      </div>
+    </section>
+
+    <nav class="file-tabs" aria-label="Choisir une matière">
+      <button type="button" class="file-tab active" data-file-tab="1">Histoire-géographie <span class="tab-count">(0)</span></button>
+      <button type="button" class="file-tab" data-file-tab="2">Français <span class="tab-count">(0)</span></button>
+      <button type="button" class="file-tab" data-file-tab="3">SVT <span class="tab-count">(0)</span></button>
+      <button type="button" class="file-tab file-tab-repertoire" data-file-tab="4">Répertoire <span class="tab-count">(0)</span></button>
+    </nav>
+
+    <div id="repertoire-view" class="repertoire-view" hidden>
+      <nav class="app-nav" aria-label="Recherche dans le répertoire">
+        <div class="app-nav-inner">
+          <label class="nav-search-label" for="nav-search">Rechercher une révision</label>
+          <input type="search" id="nav-search" class="nav-search-input" placeholder="Mots-clés (titre, texte, lien)…" autocomplete="off" enterkeyhint="search">
+        </div>
+      </nav>
+      <section class="catalog-section" aria-labelledby="catalog-heading">
+        <h2 id="catalog-heading">Toutes les révisions</h2>
+        <p class="catalog-hint" id="catalog-hint"></p>
+        <div id="catalog-list" class="catalog-list"></div>
+      </section>
+    </div>
+
+    <section id="cards" class="cards" aria-label="Fiches de la matière sélectionnée"></section>
+  </main>
+
+  <script src="revision.js"></script>
+</body>
+</html>
